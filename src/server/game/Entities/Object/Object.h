@@ -634,6 +634,7 @@ class WorldObject : public Object, public WorldLocation
         void GetAttackableUnitListInRange(std::list<Unit*> &list, float fMaxSearchRange, bool aliveOnly = true) const;
         void GetAreaTriggersWithEntryInRange(std::list<AreaTrigger*>& list, uint32 entry, ObjectGuid casterGuid, float fMaxSearchRange) const;
         Creature*   FindNearestCreature(uint32 entry, float range, bool alive = true) const;
+        std::list<Creature*> FindNearestCreatures(uint32 entry, float range) const;
         GameObject* FindNearestGameObject(uint32 entry, float range) const;
         Player*     FindNearestPlayer(float range, bool alive = true);
         GameObject* FindNearestGameObjectOfType(GameobjectTypes type, float range) const;

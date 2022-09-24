@@ -3169,6 +3169,13 @@ Creature* WorldObject::FindNearestCreature(uint32 entry, float range, bool alive
     return creature;
 }
 
+std::list<Creature*> WorldObject::FindNearestCreatures(uint32 entry, float range) const
+{
+    std::list<Creature*> creatureList;
+    GetCreatureListWithEntryInGrid(creatureList, entry, range);
+    return creatureList;
+}
+
 GameObject* WorldObject::FindNearestGameObject(uint32 entry, float range) const
 {
     GameObject* go = nullptr;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008-2012 TrinityCore <http://www.trinitycore.org/>
+ * Copyright (C) 2008-2018 TrinityCore <https://www.trinitycore.org/>
  * Copyright (C) 2005-2009 MaNGOS <http://getmangos.com/>
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -74,8 +74,8 @@ using namespace boost::program_options;
 #ifdef _WIN32
 #include "ServiceWin32.h"
 char serviceName[] = "worldserver";
-char serviceLongName[] = "LegionCore world service";
-char serviceDescription[] = "LegionCore World of Warcraft emulator world service";
+char serviceLongName[] = "TrinityCore world service";
+char serviceDescription[] = "TrinityCore World of Warcraft emulator world service";
 /*
  * -1 - not in service mode
  *  0 - stopped

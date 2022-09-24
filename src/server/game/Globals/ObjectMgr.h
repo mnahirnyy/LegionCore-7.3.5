@@ -33,6 +33,7 @@
 #include "ObjectAccessor.h"
 #include "ObjectDefines.h"
 #include "VehicleDefines.h"
+#include "QuestDef.h"
 #include <limits>
 #include <utility>
 #include "ConditionMgr.h"
@@ -625,6 +626,8 @@ class ObjectMgr
         typedef std::map<uint32, uint32> BaseXPContainer;          // [area level][base xp]
         typedef std::map<uint32, int32> FishingBaseSkillContainer; // [areaId][base skill level]
         typedef std::map<uint32, StringVector> HalfNameContainer;
+        typedef std::unordered_map<uint32, Quest*> QuestMap;
+        typedef std::unordered_map<uint32 /*questObjectiveId*/, QuestObjective const*> QuestObjectivesByIdContainer;
 
     static ObjectMgr* instance();
         std::list<CurrencyLoot> GetCurrencyLoot(uint32 entry, uint8 type, uint8 spawnMode);
@@ -677,6 +680,20 @@ class ObjectMgr
         uint32 GetNearestTaxiNode(float x, float y, float z, uint32 mapid, Player* player);
         void GetTaxiPath(uint32 source, uint32 destination, uint32 &path, uint32 &cost);
         uint32 GetTaxiMountDisplayId(uint32 id, uint32 team, bool allowed_alt_team = false);
+
+        Quest const* GetQuestTemplate(uint32 quest_id) const
+        {
+            QuestMap::const_iterator itr = _questTemplates.find(quest_id);
+            return itr != _questTemplates.end() ? itr->second : nullptr;
+        }
+
+        QuestMap const& GetQuestTemplates() const { return _questTemplates; }
+
+        QuestObjective const* GetQuestObjective(uint32 questObjectiveId) const
+        {
+            auto itr = _questObjectives.find(questObjectiveId);
+            return itr != _questObjectives.end() ? itr->second : nullptr;
+        }
 
         NpcText const* GetNpcText(uint32 textID) const;
 
@@ -1062,6 +1079,8 @@ class ObjectMgr
         ObjectGuidGenerator<HighGuid::Scenario> _scenarioGuidGenerator;
         ObjectGuidGenerator<HighGuid::Vignette> _vignetteGuidGenerator;
 
+        QuestMap _questTemplates;
+        QuestObjectivesByIdContainer _questObjectives;
 
         NpcTextContainer _npcTextStore;
         AccessRequirementContainer _accessRequirementStore;

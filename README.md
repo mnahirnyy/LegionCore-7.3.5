@@ -8,8 +8,8 @@
 
 ## Introduction
 
-LegionCore is an *MMORPG* Framework for Legion (26972) based on the uwow.biz core leaked early 2020.
-LegionCore itself has been derived from an old version of TrinityCore.
+UnifiedCore is an *MMORPG* Framework for Legion (26972) based on the uwow.biz core leaked early 2020.
+UnifiedCore itself has been derived from an old version of TrinityCore.
 
 TrinityCore is a *MMORPG* Framework based mostly in C++.
 
@@ -18,12 +18,14 @@ based on the code of that project with extensive changes over time to optimize,
 improve and cleanup the codebase at the same time as improving the in-game
 mechanics and functionality.
 
-LegionCore development is completely open source; community involvement is highly encouraged.
+UnifiedCore development is completely open source; community involvement is highly encouraged.
+
+This project is built from [dufernst's repo](https://github.com/dufernst/LegionCore-7.3.5), special thanks to him for his commits.
 
 
 ## Requirements
 
-The software requirements for LegionCore are very similar to the one from TrinityCore.
+The software requirements for UnifiedCore are very similar to the one from TrinityCore.
 The main difference worth mentioning is that on Windows currently BOOST version 1.64 is required.
 
 Software requirements are available in the [wiki](https://www.trinitycore.info/display/tc/Requirements) for
@@ -34,10 +36,6 @@ Windows, Linux and macOS.
 
 Detailed installation guides are available in the [wiki](https://www.trinitycore.info/display/tc/Installation+Guide) for
 Windows, Linux and macOS.
-
-### MySQL 5.7+
-
-Disable the NO_ZERO_IN_DATE sql_mode.
 
 
 ## Data Files
@@ -54,7 +52,7 @@ Replace the listed above files with the ones you generated yourself.
 
 ## Reporting issues
 
-Issues can be reported via the [Github issue tracker](https://github.com/dufernst/LegionCore-7.3.5/issues).
+Issues can be reported via the [Github issue tracker](https://github.com/UnifiedCore/LegionCore/issues).
 
 Please take the time to review existing issues before submitting your own to
 prevent duplicates.
